@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+    
+    <title>Cifrado AES</title>
+<!--
+SOFTY PINKO
+https://templatemo.com/tm-535-softy-pinko
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+    
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="#welcome" class="active">Bienvenida</a></li>
+                            <li><a href="#features">Cifrado</a></li>
+                            <li><a href="#work-process">Descifrado</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+                        <h1>Cifrados y Descifrador <strong>AES</strong>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+    <!-- ***** Features Small Start ***** -->
+    <section class="section home-feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
+                            <div class="features-small-item">
+                                <p>Ingresa el mensaje a cifrar</p>
+                                <textarea id="mensaje" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
+                            <div class="features-small-item">
+                                <p>Ingresa la clave</p>
+                                <textarea id="clave" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+
+                        <!-- ***** Features Small Item Start ***** -->
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
+                            <div class="features-small-item">
+                                <p>Ingresa el tipo tamaño del cifrado de AES </p>
+                                <input type="radio" id="AES-128" name="tipo-cifrado" value="AES-128">AES-128
+                                <br>
+                                <br>
+                                <input type="radio" id="AES-192" name="tipo-cifrado" value="AES-192">AES-192
+                                <br>
+                                <br>
+                                <input type="radio" id="AES-256" name="tipo-cifrado" value="AES-256">AES-256
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <!-- ***** Features Small Item End ***** -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-top-70 padding-bottom-0" id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <button type="submit" class="boton" id="cifrado">Cifrar</button>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-top-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Mensaje Cifrado:</h2>
+                    </div>
+                    <div class="left-text">
+                        <textarea cols="80" rows="4" id="mensaje-cifrado" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section padding-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h2 class="section-title">Descarga tu cifrado en un documento</h2>
+                    </div>
+                    <div class="left-text">
+                        <p>Puedes elegir entre cualquiera de las siguientes tipos de archivo para decargar tu cifrado.</p>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <button type="submit" class="boton2" id="descargar_txt">TXT</button>
+                    <button type="submit" class="boton2" id="descargar_pdf">PDF</button>
+                    <button type="submit" class="boton2" id="descargar_doc">DOC</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Home Parallax Start ***** -->
+    <section class="mini" id="work-process">
+        <div class="mini-content">
+            <div class="container">
+                <div class="row">
+                    <div class="offset-lg-3 col-lg-6">
+                        <div class="info">
+                            <h1>Descifrado</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ***** Mini Box Start ***** -->
+                <div class="login-form">
+                    <div>
+                        <a href="#" class="mini-box">
+                            <input type="file" id="archivos" accept="application/pdf, text/plain, application/msword">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="mini-box">
+                            <textarea id="contenido" cols="80" readonly></textarea>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="mini-box">
+                            <p>Ingresa la clave</p>
+                            <textarea id="clave" cols="80" rows="4"></textarea>
+                        </a>
+                    </div>
+                    <div class="boton3">
+                        <a href="#" class="mini-box">
+                            <input type="button" id="descifrado" value="Descifrar">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="mini-box">
+                            <p>Mensaje descifrado Hexadecimal</p>
+                            <textarea cols="80" rows="4" id="mensaje-descifrado-hex" readonly></textarea>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="mini-box">
+                            <p>Mensaje descifrado</p>
+                            <textarea cols="80" rows="4" id="mensaje-descifrado" readonly></textarea>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#" class="mini-box">
+                            <p>Descarga tu archivo descifrado</p>
+                            <button type="submit" class="boton2" id="descargar_txt">TXT</button>
+                            <button type="submit" class="boton2" id="descargar_pdf">PDF</button>
+                            <button type="submit" class="boton2" id="descargar_doc">DOC</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- ***** Mini Box End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Home Parallax End ***** -->
+
+    
+    <!-- ***** Footer Start ***** -->
+    <footer>
+        <div class="container">
+           
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="copyright">Asch Garcia Jan Albert</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="/assets/js/FileSaver.js"></script>
+    <script src="/assets/js/cifrado.js"></script>
+    <script src="/assets/js/descifrado.js"></script>
+
+    <script>
+        $('#descargar_txt').click(function(){
+            var cifrado = document.getElementById('mensaje-cifrado').value;
+            if(cifrado==""){
+                alert("Se debe de cifrar un texto");
+            }
+            else
+            {
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Cifrado.txt");
+            }
+        });
+        $('#descargar_doc').click(function(){
+            var cifrado = document.getElementById('mensaje-cifrado').value;
+            if(cifrado==""){
+                alert("Se debe de cifrar un texto");
+            }
+            else{
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Cifrado.doc");
+            }
+        });
+        $('#descargar_pdf').click(function(){
+            var cifrado = document.getElementById('mensaje-cifrado').value;
+            if(cifrado==""){
+                alert("Se debe de cifrar un texto");
+            }
+            else{
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Cifrado.pdf");
+            }
+        });
+    </script>
+    
+
+    <script>
+        $('#descargar_txt').click(function(){
+            var cifrado = document.getElementById('mensaje-descifrado').value;
+            if(cifrado==""){
+                alert("Se debe de descifrar un texto");
+            }
+            else{
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Descifrado.txt");
+            }
+        });
+        $('#descargar_doc').click(function(){
+            var cifrado = document.getElementById('mensaje-descifrado').value;
+            if(cifrado==""){
+                alert("Se debe de descifrar un texto");
+            }
+            else{
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Descifrado.doc");
+            }
+        });
+        $('#descargar_pdf').click(function(){
+            var cifrado = document.getElementById('mensaje-descifrado').value;
+            if(cifrado==""){
+                alert("Se debe de descifrar un texto");
+            }
+            else{
+                var blob = new Blob([cifrado], {type: "text/plain;charset=utf-8"});
+                saveAs(blob, "Mensaje_Descifrado.pdf");
+            }
+        });
+    </script>
+    
+    
+    <script>
+        function abrirArchivos(evento){
+            let archivo = evento.target.files[0];
+            if(archivo){
+                let reader = new FileReader();
+                reader.onload =  function(e){
+                    let contenido = e.target.result;
+                    document.getElementById('contenido').value = contenido;
+                };
+                reader.readAsText(archivo);
+            }
+        }
+        window.addEventListener('load', () => {
+            document.getElementById('archivos').addEventListener('change', abrirArchivos);
+        });
+    </script>
+
+
+  </body>
+</html>
